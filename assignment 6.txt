@@ -1,0 +1,74 @@
+//1.converting buffer to json
+
+var buf = new Buffer("bcde");
+console.log(buf.toJSON());
+
+output:{type:'Buffer',data:[98,99,100,101]}
+
+//2. List of all the packages in NPM:
+
+NPM: Node Package Manager
+A package in node.js contains all the files you need for a module.
+
+Packages in NPM are:
+Async,Request, Lodash,chalk, Debug, Commander, 
+react-dom, tslib, axios, fs-extra, vue,bluebird, uuid, 
+classnames, core-js, jquery,minimist, @types/node, 
+@babel/runtime,aws-sdk,semver,
+css-loader,rimraf,babel-core,yeoman-generator,js-yaml,
+ora,@angular/corestyled-components,babel-runtime. 
+
+//3. working on all possible filesystem in node js
+
+//create an empty file in node js
+fs.open('sun.txt', 'y', function (err, file) { 
+if (err) throw err;
+console.log('Saved');
+});
+
+//Rename the file "file.txt" into "node.txt":
+fs.rename('file.txt', 'node.txt', function (err){
+	 if (err) throw err; 
+console.log('File Renamed'); 
+}); 
+
+//append file
+fs.appendFile('kit.js', 'box', function (err) {
+  if (err) throw err;
+  console.log('terminated');
+});
+
+//writing data into a file in node js
+fs.writeFile('log.js','console.log("hello")',function(err){
+console.log("file created");
+});
+output:
+console.log("hello")
+file created
+
+//delete
+fs.unlink('math.js',function(err){
+    console.log("file deleted");
+})
+var fs = require('fs');
+
+//4.nodejs buffers
+var buf = new Buffer("node js is easy","utf-8");
+buf=new Buffer(256);
+len=buf.write("node js is very hard");
+console.log("buffer unicode return as"+" "+buf );
+console.log("buffer unicode are"+len);
+buf=new Buffer(26);
+for(var i=0;i<26;i++){
+    buf[i]=i+65
+}
+console.log(buf.toString('ascii'))
+console.log(buf.toString('ascii',0,5))
+console.log(buf.toString('utf8',0,6))
+console.log(buf.toString(undefined,0,10))
+
+//concate two buffers
+var buffer1 = new Buffer('Good morning');
+var buffer2 = new Buffer('India');
+var buffer3 = Buffer.concat([buffer1,buffer2]);
+console.log("buffer3 content: " + buffer3.toString());
